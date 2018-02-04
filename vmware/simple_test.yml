@@ -1,7 +1,6 @@
 ---
 - hosts: all
   gather_facts: false
-  connection: local
 
   vars:
     max_retries: 9
@@ -28,4 +27,4 @@
       copy:
         content: "CANCOM"
         dest: /tmp/new-ansible-file.txt
-        force: no
+        force: yes
