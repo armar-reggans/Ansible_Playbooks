@@ -27,8 +27,7 @@
     - name: ensure file exists
       copy:
         content: "CANCOM"
-        dest: /root/new-ansible-file.txt
+        dest: /tmp/new-ansible-file.txt
         force: no
-        group: sys
         owner: root
         mode: 0555
