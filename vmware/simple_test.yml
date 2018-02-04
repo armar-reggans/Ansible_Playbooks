@@ -1,0 +1,34 @@
+---
+- hosts: all
+  gather_facts: false
+  connection: local
+
+  vars:
+    max_retries: 9
+    retry_interval: 20
+    disk: '80'
+
+  tasks:
+    - debug: var=vcenter_hostname
+    - debug: var=esxi_host
+    - debug: var=datacenter
+    - debug: var=iso
+    - debug: var=osid
+    - debug: var=cpucount
+    - debug: var=memory
+    - debug: var=network
+    - debug: var=datastore
+    - debug: var=disk
+    - debug: var=notes
+    - debug: var=manageiq.api_url
+    - debug: var=manageiq.api_token
+    - debug: var=manageiq.service
+
+    - name: ensure file exists
+      copy:
+        content: "CANCOM"
+        dest: /root/new-ansible-file.txt
+        force: no
+        group: sys
+        owner: root
+        mode: 0555
