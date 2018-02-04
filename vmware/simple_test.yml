@@ -29,5 +29,3 @@
         content: "CANCOM"
         dest: /tmp/new-ansible-file.txt
         force: no
-        owner: root
-        mode: 0555
